@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Activo
+comment1.params=descripcion
+comment1.target=Activo(java.lang.String)
+comment2.params=
+comment2.target=int\ getId()
+comment3.params=descripcion
+comment3.target=void\ setDescipcion(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getDescipcion()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
