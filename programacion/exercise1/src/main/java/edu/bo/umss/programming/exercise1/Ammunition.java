@@ -29,4 +29,19 @@ public class Ammunition extends Arm {
     public void setBulk(String bulk) {
         this.bulk = bulk;
     }
+
+    @Override
+    public String toString() {
+        return "Ammunition{" +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", serialNumber='" + getSerialNumber() + '\'' +
+                ", caliber='" + getCaliber() + '\'' +
+                ", weight='" + getWeight() + '\'' +
+                ", manufacturer='" + getManufacturer() + '\'' +
+                ", numberOfRounds=" + numberOfRounds +
+                ", bulk='" + bulk + '\'' +
+                '}';
+    }
 }

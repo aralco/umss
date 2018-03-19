@@ -38,4 +38,20 @@ public class Weapon extends Arm {
     public void setMode(String mode) {
         this.mode = mode;
     }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", serialNumber='" + getSerialNumber() + '\'' +
+                ", caliber='" + getCaliber() + '\'' +
+                ", weight='" + getWeight() + '\'' +
+                ", manufacturer='" + getManufacturer() + '\'' +
+                ", type='" + type + '\'' +
+                ", model='" + model + '\'' +
+                ", mode='" + mode + '\'' +
+                '}';
+    }
 }

@@ -20,4 +20,15 @@ public class GasStation extends Site {
     public void setFuelDispensers(List<FuelDispenser> fuelDispensers) {
         this.fuelDispensers = fuelDispensers;
     }
+
+    @Override
+    public String toString() {
+        return "GasStation{" +
+                "id='" + getId() + '\'' +
+                ", location='" + getLocation() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", fuelDispensers=" + fuelDispensers +
+                '}';
+    }
 }
