@@ -9,6 +9,11 @@ public class Armory extends Site {
 
     private List<Cabinet> cabinets;
 
+    public Armory(String location, String name, String description, List<Cabinet> cabinets){
+        super(location, name, description);
+        this.cabinets = cabinets;
+    }
+
     public List<Cabinet> getCabinets() {
         return cabinets;
     }
