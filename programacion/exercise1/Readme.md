@@ -7,11 +7,109 @@
  ![alt text](src/main/resources/images/picture1.png)
 
 # Bosquejo y estrategia de solución
-blabkabk
-diagram
+sdasdasd
+ ![alt text](src/main/resources/images/class_diagram.png)
 
 # Código fuente
-blablabla
+* Ammunition.java
+```java
+package edu.bo.umss.programming.exercise1.domain;
+
+public class Ammunition extends Arm {
+    private Integer numberOfRounds;
+    private String bulk;
+
+
+    public Ammunition(String name, String description, String serialNumber, String caliber, String weight, String manufacturer, Integer numberOfRounds, String bulk) {
+        super(name, description, serialNumber, caliber, weight, manufacturer);
+        this.numberOfRounds = numberOfRounds;
+        this.bulk = bulk;
+    }
+
+    public Integer getNumberOfRounds() {
+        return numberOfRounds;
+    }
+
+    public void setNumberOfRounds(Integer numberOfRounds) {
+        this.numberOfRounds = numberOfRounds;
+    }
+
+    public String getBulk() {
+        return bulk;
+    }
+
+    public void setBulk(String bulk) {
+        this.bulk = bulk;
+    }
+
+    @Override
+    public String toString() {
+        return "Ammunition{" +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", serialNumber='" + getSerialNumber() + '\'' +
+                ", caliber='" + getCaliber() + '\'' +
+                ", weight='" + getWeight() + '\'' +
+                ", manufacturer='" + getManufacturer() + '\'' +
+                ", numberOfRounds=" + numberOfRounds +
+                ", bulk='" + bulk + '\'' +
+                '}';
+    }
+}
+```
+
+* Arm.java
+```java
+package edu.bo.umss.programming.exercise1.domain;
+
+public abstract class Arm extends Asset {
+    private String serialNumber;
+    private String caliber;
+    private String weight;
+    private String manufacturer;
+
+    protected Arm(String name, String description, String serialNumber, String caliber, String weight, String manufacturer) {
+        super(name, description);
+        this.serialNumber = serialNumber;
+        this.caliber = caliber;
+        this.weight = weight;
+        this.manufacturer = manufacturer;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getCaliber() {
+        return caliber;
+    }
+
+    public void setCaliber(String caliber) {
+        this.caliber = caliber;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+}
+```
 
 ## TODO
  * llenar información usando polimorfismo

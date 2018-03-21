@@ -1,10 +1,7 @@
-package edu.bo.umss.programming.exercise1;
+package edu.bo.umss.programming.exercise1.domain;
 
 import java.util.UUID;
 
-/**
- * @author ariel.alcocer
- */
 public class FuelDispenser {
 
     private String id;

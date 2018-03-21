@@ -1,8 +1,5 @@
-package edu.bo.umss.programming.exercise1;
+package edu.bo.umss.programming.exercise1.domain;
 
-/**
- * @author ariel.alcocer
- */
 public class Ammunition extends Arm {
     private Integer numberOfRounds;
     private String bulk;

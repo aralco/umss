@@ -1,8 +1,5 @@
-package edu.bo.umss.programming.exercise1;
+package edu.bo.umss.programming.exercise1.domain;
 
-/**
- * @author ariel.alcocer
- */
 public class Weapon extends Arm {
     private String type;
     private String model;

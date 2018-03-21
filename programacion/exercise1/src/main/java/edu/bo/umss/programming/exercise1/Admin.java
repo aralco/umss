@@ -1,11 +1,10 @@
 package edu.bo.umss.programming.exercise1;
 
+import edu.bo.umss.programming.exercise1.domain.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author ariel.alcocer
- */
 public class Admin {
 
     public static void main(String args[])  {

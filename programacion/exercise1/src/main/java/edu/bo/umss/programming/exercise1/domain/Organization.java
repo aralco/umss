@@ -1,12 +1,9 @@
-package edu.bo.umss.programming.exercise1;
+package edu.bo.umss.programming.exercise1.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * @author ariel.alcocer
- */
 public class Organization implements Operation {
     private String id;
     private String name;

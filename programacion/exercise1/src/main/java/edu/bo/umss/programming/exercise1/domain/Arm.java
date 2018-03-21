@@ -1,8 +1,5 @@
-package edu.bo.umss.programming.exercise1;
+package edu.bo.umss.programming.exercise1.domain;
 
-/**
- * @author ariel.alcocer
- */
 public abstract class Arm extends Asset {
     private String serialNumber;
     private String caliber;
