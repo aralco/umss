@@ -6,8 +6,8 @@
 ## Enunciado del problema
  Se tiene una determinada organización militar que con el objetivo de gestionar sus recursos de una manera más eficiente, 
  ha decidido implementar una solución de software que le permita llevar a cabo todas las tareas que este proceso conlleva. 
- En este sentido la solución de software debe tomar en cuenta el personal (militares), sitios que pueden ser: armerias, 
- estaciones de servicio (proveedores de combustible), entre otros. Asímismo debe administrar los activos de la organización, 
+ En este sentido la solución de software debe tomar en cuenta el personal (militares), sitios que pueden ser: armerías, 
+ estaciones de servicio (proveedores de combustible), entre otros. Asimismo debe administrar los activos de la organización, 
  como ser vehículos, armamentos (que pueden ser categorizados en armas y municiones), entre otros.
  
  ![Dominio del Problema](src/main/resources/images/picture1.png)
