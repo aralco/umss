@@ -12,20 +12,40 @@ public class Admin {
         List<Asset> assets = new ArrayList<Asset>();
 
         // creando Weapon
-        assets.add(new Weapon("Ametralladora","Ametralladora con culata de madera","123E","25","10kg","FFAA","Ametralladora","Ak-47","Automatica"));
-        assets.add(new Weapon("Fusil","fusil con culata de madera","456E","30","15kg","FFAA","Fusil","Mouser-95","Automatica"));
-        assets.add(new Weapon("Pistola","Pistola de tamaño pequeño","896E","10","5kg","FFAA","Pistola","Pistol-23","Manual"));
+        Asset weapon1 = new Weapon("Ametralladora","Ametralladora con culata de madera","123E","25","10kg","FFAA","Ametralladora","Ak-47","Automatica");
+        Arm weapon2 = new Weapon("Fusil","fusil con culata de madera","456E","30","15kg","FFAA","Fusil","Mouser-95","Automatica");
+        Weapon weapon3 = new Weapon("Pistola","Pistola de tamaño pequeño","896E","10","5kg","FFAA","Pistola","Pistol-23","Manual");
+        assets.add(weapon1);
+        assets.add(weapon2);
+        assets.add(weapon3);
+        System.out.println("********WEAPONS********");
+        System.out.println(weapon1);
+        System.out.println(weapon2);
+        System.out.println(weapon3);
+
 
     	// creado Ammunition
-        assets.add(new Ammunition("Bala","Bala calibre 25 para AK-47","452B","25","50gr","FFAA",30,"2x4"));
-        assets.add(new Ammunition("Bala","Bala calibre 30 para FAL","829B","30","60gr","FFAA",30,"2x5"));
-        assets.add(new Ammunition("Bala","Bala calibre 10","613B","10","30gr","FFAA",30,"1x2"));
+        Asset ammunition1 = new Ammunition("Bala","Bala calibre 25 para AK-47","452B","25","50gr","FFAA",30,"2x4");
+        Arm ammunition2 = new Ammunition("Bala","Bala calibre 30 para FAL","829B","30","60gr","FFAA",30,"2x5");
+        Ammunition ammunition3 = new Ammunition("Bala","Bala calibre 10","613B","10","30gr","FFAA",30,"1x2");
+        assets.add(ammunition1);
+        assets.add(ammunition2);
+        assets.add(ammunition3);
+        System.out.println("********AMMUNITIONS********");
+        System.out.println(ammunition1);
+        System.out.println(ammunition2);
+        System.out.println(ammunition3);
 
         // creando Vehicle
-        assets.add(new Vehicle("Camioneta","Camioneta Toyota 4X4","0009","123-ABC","Toyota",2000,"Toyota 4X4-2000"));
-        assets.add(new Vehicle("Camion","Camion para transportar Armamento","0010","754-YTF","Suzuki",1996,"Suzuki CA-1996"));
+        Asset vehicle1 = new Vehicle("Camioneta","Camioneta Toyota 4X4","0009","123-ABC","Toyota",2000,"Toyota 4X4-2000");
+        Asset vehicle2 = new Vehicle("Camion","Camion para transportar Armamento","0010","754-YTF","Suzuki",1996,"Suzuki CA-1996");
+        assets.add(vehicle1);
+        assets.add(vehicle2);
+        System.out.println("********VEHICLE********");
+        System.out.println(vehicle1);
+        System.out.println(vehicle2);
 
-		//creando un ArrayList de Personnels
+        //creando un ArrayList de Personnels
         List<Personnel> personnels  = new ArrayList<Personnel>();
 
         // creando Personnel
@@ -54,6 +74,10 @@ public class Admin {
         // creamos la armeria
         Armory armeria = new Armory("Cochabamba","Armeria PM-23","Armeria del la Policia Militar-23",cabinets);
 
+        System.out.println("********SITES********");
+        System.out.println(estacion);
+        System.out.println(armeria);
+
         //creando un ArrayList de Sites
         List<Site> sites  = new ArrayList<Site>();
         sites.add(estacion);
@@ -66,7 +90,7 @@ public class Admin {
         organization.setAssets(assets);
         organization.setSites(sites);
         organization.setPersonnels(personnels);
-
+        System.out.println("********ORGANIZATION********");
         System.out.println(organization);
 
         // bucamos el id del primer Weapons(ametralladora), en un lista de puros Weapons
@@ -78,7 +102,7 @@ public class Admin {
         // mostramos el el objeto de aquel id
         System.out.println(organization.getAssetById(idToSearch)+"\n");
 
-        // procedmos a eliminar la  ametralladora de la lista de Asset de la organizacion
+        // procedemos a eliminar la  ametralladora de la lista de Asset de la organizacion
         organization.deleteAsset(idToSearch);
 
         // recorremos la lista de weapons para ver que ya no existe
