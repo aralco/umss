@@ -1,16 +1,19 @@
-# Estudiantes
+# PROGRAMACION - Herencia y Polimorfismo
+
+## Estudiantes
   * Alexander Mamani Yucra
   * Ariel Alcocer Rodriguez
-# Enunciado del problema
- Se tiene una organización militar que gestiona la seguridad de un determinado país. Para llevar a cabo sus actividades de gestión la organización requiere de una solución de software que pueda beneficiar a la organización en una administración eficiente de sus recursos a todo nivel. La solución de software debe tomar en cuenta el personal (militares), sites que pueden ser: armerias, estaciones de servicio (proveedores de combustible), entre otros. Asímismo debe gestionar los assets de la organización, como ser armamentos (que pueden ser categorizados en armas y municiones) y vehículos.
+## Enunciado del problema
+ Se tiene una organización militar que gestiona la seguridad de un determinado país. Para llevar a cabo sus actividades de gestión la organización requiere de una solución de software que pueda beneficiar a la organización en una administración eficiente de sus recursos a todo nivel. La solución de software debe tomar en cuenta el personal (militares), sitios que pueden ser: armerias, estaciones de servicio (proveedores de combustible), entre otros. Asímismo debe gestionar los activos de la organización, como ser vehículos y armamentos (que pueden ser categorizados en armas y municiones).
  
- ![alt text](src/main/resources/images/picture1.png)
+ ![Dominio del Problema](src/main/resources/images/picture1.png)
 
-# Bosquejo y estrategia de solución
-sdasdasd
- ![alt text](src/main/resources/images/class_diagram.png)
+## Bosquejo y estrategia de solución
+La solución de software pretende trabajar sobre el siguiente dominio del problema:
+ 
+ ![Diagrama de Clases](src/main/resources/images/class_diagram.png)
 
-# Código fuente
+## Código fuente
 * Ammunition.java
 ```java
 package edu.bo.umss.programming.exercise1.domain;
@@ -110,8 +113,3 @@ public abstract class Arm extends Asset {
     }
 }
 ```
-
-## TODO
- * llenar información usando polimorfismo
- * funciones como CRUD (Create, Read, Update, Delete) para
-    * Organization
