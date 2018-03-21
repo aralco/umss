@@ -13,8 +13,8 @@
     <node x="521.4935897435898" y="167.0">edu.bo.umss.programming.exercise1.Organization</node>
     <node x="371.49358974358984" y="378.0">edu.bo.umss.programming.exercise1.Weapon</node>
     <node x="264.49358974358984" y="11.0">edu.bo.umss.programming.exercise1.Asset</node>
-    <node x="0.0" y="178.0">edu.bo.umss.programming.exercise1.Vehicle</node>
     <node x="587.9935897435898" y="411.0">edu.bo.umss.programming.exercise1.Admin</node>
+    <node x="0.0" y="178.0">edu.bo.umss.programming.exercise1.Vehicle</node>
     <node x="1093.375" y="222.0">edu.bo.umss.programming.exercise1.Armory</node>
   </nodes>
   <notes />
@@ -37,17 +37,17 @@
       <point x="289.5" y="353.0" />
       <point x="-62.5" y="58.5" />
     </edge>
-    <edge source="edu.bo.umss.programming.exercise1.Arm" target="edu.bo.umss.programming.exercise1.Asset">
-      <point x="0.0" y="-58.5" />
-      <point x="352.0" y="147.0" />
-      <point x="344.49358974358984" y="147.0" />
-      <point x="0.0" y="47.5" />
-    </edge>
     <edge source="edu.bo.umss.programming.exercise1.Vehicle" target="edu.bo.umss.programming.exercise1.Asset">
       <point x="0.0" y="-69.5" />
       <point x="103.5" y="147.0" />
       <point x="291.1602564102565" y="147.0" />
       <point x="-53.333333333333314" y="47.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.Arm" target="edu.bo.umss.programming.exercise1.Asset">
+      <point x="0.0" y="-58.5" />
+      <point x="352.0" y="147.0" />
+      <point x="344.49358974358984" y="147.0" />
+      <point x="0.0" y="47.5" />
     </edge>
     <edge source="edu.bo.umss.programming.exercise1.Armory" target="edu.bo.umss.programming.exercise1.Site">
       <point x="-52.25" y="-25.5" />
@@ -56,7 +56,7 @@
       <point x="60.0" y="58.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7822520507084265" x="636.5" y="177.18779790276454" />
+  <settings layout="Hierarchic Group" zoom="0.7822520507084265" x="922.3040991420401" y="241.18779790276454" />
   <SelectedNodes>
     <node>edu.bo.umss.programming.exercise1.Ammunition</node>
     <node>edu.bo.umss.programming.exercise1.Cabinet</node>
@@ -68,8 +68,8 @@
     <node>edu.bo.umss.programming.exercise1.Organization</node>
     <node>edu.bo.umss.programming.exercise1.Weapon</node>
     <node>edu.bo.umss.programming.exercise1.Asset</node>
-    <node>edu.bo.umss.programming.exercise1.Vehicle</node>
     <node>edu.bo.umss.programming.exercise1.Admin</node>
+    <node>edu.bo.umss.programming.exercise1.Vehicle</node>
     <node>edu.bo.umss.programming.exercise1.Armory</node>
   </SelectedNodes>
   <Categories>

@@ -69,6 +69,23 @@ public class Admin {
         organization.setPersonnels(personnels);
 
         System.out.println(organization);
+
+        // bucamos el id del primer Weapons(ametralladora), en un lista de puros Weapons
+        String idToSearch =organization.getWeapons().get(0).getId();
+
+        // mostramos el id para despues corroborar que se elemino
+        System.out.println(idToSearch+"\n");
+
+        // mostramos el el objeto de aquel id
+        System.out.println(organization.getAssetById(idToSearch)+"\n");
+
+        // procedmos a eliminar la  ametralladora de la lista de Asset de la organizacion
+        organization.deleteAsset(idToSearch);
+
+        // recorremos la lista de weapons para ver que ya no existe
+        for(Weapon w: organization.getWeapons()){
+            System.out.println(w);
+        }
     }
 
 
