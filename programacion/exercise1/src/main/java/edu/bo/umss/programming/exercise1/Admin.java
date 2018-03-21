@@ -110,6 +110,4 @@ public class Admin {
             System.out.println(w);
         }
     }
-
-
 }
