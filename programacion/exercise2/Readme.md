@@ -9,7 +9,11 @@
 ### Descripción
  Parallel inheritance hierarchies is really a special case of shotgun surgery. In this case, every time you make a 
  subclass of one class, you also have to make a subclass of another. You can recognize this smell because the prefixes 
- of the class names in one hierarchy are the same as the prefixes in another hierarchy. 
+ of the class names in one hierarchy are the same as the prefixes in another hierarchy.
+ 
+ Parallel Inheritance Hierarchies occur when an inheritance tree depends on another inheritance tree by composition, and 
+ they maintain a special relationship where one subclass of a dependent inheritance must depend on one a particular 
+ subclass of another Inheritance.  
  
  ![Problema](src/main/resources/parallel-inheritance-hierarchies.png)
 
