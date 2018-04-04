@@ -1,33 +1,23 @@
-package edu.bo.umss.programming.exercise1.domain;
+package bo.edu.umss.programming.exercise1.domain;
 
 import java.util.UUID;
 
-public abstract class Site {
+public abstract class Asset {
     private String id;
-    private String location;
     private String name;
     private String description;
 
-    public Site() {
+    public Asset() {
     }
 
-    protected Site(String location, String name, String description) {
+    protected Asset(String name, String description) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
-        this.location = location;
     }
 
     public String getId() {
         return id;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getName() {
@@ -45,4 +35,5 @@ public abstract class Site {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

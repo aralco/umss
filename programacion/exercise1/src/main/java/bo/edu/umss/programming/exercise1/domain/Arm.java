@@ -1,4 +1,4 @@
-package edu.bo.umss.programming.exercise1.domain;
+package bo.edu.umss.programming.exercise1.domain;
 
 public abstract class Arm extends Asset {
     private String serialNumber;

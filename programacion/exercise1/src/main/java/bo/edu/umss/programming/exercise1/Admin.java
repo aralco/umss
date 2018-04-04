@@ -1,6 +1,6 @@
-package edu.bo.umss.programming.exercise1;
+package bo.edu.umss.programming.exercise1;
 
-import edu.bo.umss.programming.exercise1.domain.*;
+import bo.edu.umss.programming.exercise1.domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
