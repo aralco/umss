@@ -11,7 +11,7 @@
  subclass of one class, you also have to make a subclass of another. You can recognize this smell because the prefixes 
  of the class names in one hierarchy are the same as the prefixes in another hierarchy. 
  
- ![Problema](src/main/resources/images/parallel-inheritance-hierarchies.png)
+ ![Problema](src/main/resources/parallel-inheritance-hierarchies.png)
 
 ### Solución
 The general strategy for eliminating the duplication is to make sure that instances of one hierarchy refer to instances 
