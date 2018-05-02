@@ -48,6 +48,14 @@ public class Expendedora {
         throw new NoSuchElementException(clazz);
     }
 
+    public Producto ventaProducto(String clazz)    {
+        for(Producto p : productos) {
+            p.vender(p);
+        }
+        return null;
+    }
+
+
     public static void main(String args[])  {
         Expendedora expendedora = new Expendedora();
         //Papa Frita

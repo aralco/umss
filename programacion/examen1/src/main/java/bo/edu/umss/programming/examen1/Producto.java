@@ -35,8 +35,9 @@ abstract public class Producto {
     }
 
     abstract public void mostrar();
+    abstract public Producto vender(Producto producto);
 
-    @Override
+        @Override
     public String toString() {
         return "Producto{" +
                 "nombre='" + nombre + '\'' +

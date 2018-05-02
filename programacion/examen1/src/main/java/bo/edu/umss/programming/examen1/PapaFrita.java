@@ -9,4 +9,10 @@ public class PapaFrita extends Producto {
     public void mostrar() {
         System.out.println("Papa Frita:\n" + toString());
     }
+
+    public PapaFrita vender(Producto producto)    {
+        if(producto instanceof PapaFrita)
+            return (PapaFrita)producto;
+        return null;
+    }
 }

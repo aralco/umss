@@ -6,4 +6,10 @@ public class Goma extends Producto {
     public void mostrar() {
         System.out.println("Goma:\n"+toString());
     }
+
+    public Goma vender(Producto producto)    {
+        if(producto instanceof Goma)
+            return (Goma)producto;
+        return null;
+    }
 }

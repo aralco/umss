@@ -9,4 +9,10 @@ public class Nacho extends Producto {
     public void mostrar() {
         System.out.println("Nacho:\n" + toString());
     }
+
+    public Nacho vender(Producto producto)    {
+        if(producto instanceof Nacho)
+            return (Nacho)producto;
+        return null;
+    }
 }
