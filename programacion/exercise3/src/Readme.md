@@ -28,6 +28,7 @@
     - Beneficios: Permitir realizar el registro del personal en la organización.
     - Criterios de Aceptación:
         - El Personal registrado debe tener un identificador único que será generado por la aplicación.
+        - Se debe también generar la fecha de registro del personal.
         - Los datos ingresados por el usuario deben ser validados al momento del registro, mostrar mensaje de error si 
         corresponde.
         - Al finalizar el registro mostrar la información del personal registrado en la organización incluyendo el 
