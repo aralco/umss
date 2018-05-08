@@ -7,17 +7,26 @@ public class PersonnelAdmin {
     public Personnel registerPersonnel(Personnel personnel) throws NotValidPersonnelException {
         personnel.setId(UUID.randomUUID().toString());
         personnel.setRegistrationDate(Calendar.getInstance().getTime());
+        if(!isValidPersonnel(personnel))   {
+            throw new NotValidPersonnelException();
+        }
+        System.out.println(personnel);
+        return personnel;
+    }
+
+    public Boolean isValidPersonnel(Personnel personnel) {
+        Boolean isValid = true;
         if(personnel.getFullName()==null
                 || personnel.getCi()==null
                 || personnel.getBirthDate()==null
                 || personnel.getPhone()==null
                 || personnel.getAddress()==null
                 || personnel.getPosition()==null)   {
-            throw new NotValidPersonnelException();
+            isValid = false;
         }
-        System.out.println(personnel);
-        return personnel;
+        return isValid;
     }
+
     public static void main(String args []) throws NotValidPersonnelException{
         PersonnelAdmin personnelAdmin = new PersonnelAdmin();
         Personnel personnel = new Personnel();

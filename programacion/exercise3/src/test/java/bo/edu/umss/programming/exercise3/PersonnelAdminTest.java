@@ -79,5 +79,18 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(notValidPersonnel);
     }
 
+    @Test
+    public void isValidPersonnel()  {
+        Assert.assertTrue(
+                "A person with valid inputs is provided.",
+                personnelAdmin.isValidPersonnel(personnel));
+    }
+
+    @Test
+    public void isNotValidPersonnel()  {
+        Assert.assertFalse(
+                "A person with not valid inputs is provided.",
+                personnelAdmin.isValidPersonnel(notValidPersonnel));
+    }
 
 }
