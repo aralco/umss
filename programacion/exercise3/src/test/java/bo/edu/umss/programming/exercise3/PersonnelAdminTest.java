@@ -44,52 +44,37 @@ public class PersonnelAdminTest {
     }
 
     @Test
-    public void testRegisteredPersonnel() throws NotValidPersonnelException {
-        Assert.assertNotNull("Personnel should be registered/created.",
-                personnelAdmin.registerPersonnel(personnel));
+    public void testRegisteredPersonnelIsReturned() throws Exception {
+        Assert.assertNotNull(personnelAdmin.registerPersonnel(personnel));
     }
 
     @Test
-    public void testGeneratedIdentifierByRegister() throws NotValidPersonnelException {
-        Assert.assertNotNull("Register Personnel should have a generated identifier.",
-                personnelAdmin.registerPersonnel(personnel).getId());
+    public void testRegisteredPersonnelHasId() throws Exception {
+        Assert.assertNotNull((personnelAdmin.registerPersonnel(personnel)).getId());
+    }
+
+
+    @Test
+    public void testRegisteredPersonnelHasRegistrationDate() throws Exception {
+        Assert.assertNotNull((personnelAdmin.registerPersonnel(personnel)).getRegistrationDate());
     }
 
     @Test
-    public void testGeneratedIdentifierByRegisterIsUnique() throws NotValidPersonnelException {
-        Assert.assertNotEquals(
-                personnelAdmin.registerPersonnel(personnel).getId(),
-                personnelAdmin.registerPersonnel(personnel2).getId()
-        );
+    public void testRegisteredPersonnelHasUniqueId() throws Exception {
+        Personnel personnel1 = personnelAdmin.registerPersonnel(new Personnel());
+        Personnel personnel2 = personnelAdmin.registerPersonnel(new Personnel());
+
+        Assert.assertNotEquals(personnel1.getId(), personnel2.getId());
     }
 
     @Test
-    public void testGeneratedRegisteredDateByRegister() throws NotValidPersonnelException {
-        Assert.assertNotNull(personnelAdmin.registerPersonnel(personnel).getRegistrationDate());
-    }
-
-    @Test(expected = NotValidPersonnelException.class)
-    public void testRegistrationPersonnelDataIsValid() throws NotValidPersonnelException {
-        personnelAdmin.registerPersonnel(notValidPersonnel);
+    public void testValidPersonnel() throws Exception {
+        Assert.assertTrue(personnelAdmin.isValidPersonnel(personnel));
     }
 
     @Test
-    public void testRegistrationPersonnelDataIsValid2() throws NotValidPersonnelException {
-        thrown.expect(NotValidPersonnelException.class);
-        personnelAdmin.registerPersonnel(notValidPersonnel);
-    }
+    public void testInvalidPersonnel() throws Exception {
+        Assert.assertFalse(personnelAdmin.isValidPersonnel(notValidPersonnel));
 
-    @Test
-    public void testIsValidPersonnel()  {
-        Assert.assertTrue(
-                "A person with valid inputs is provided.",
-                personnelAdmin.isValidPersonnel(personnel));
-    }
-
-    @Test
-    public void testIsNotValidPersonnel()  {
-        Assert.assertFalse(
-                "A person with not valid inputs is provided.",
-                personnelAdmin.isValidPersonnel(notValidPersonnel));
     }
 }
