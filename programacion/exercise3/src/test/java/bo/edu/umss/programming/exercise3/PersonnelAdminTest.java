@@ -80,17 +80,16 @@ public class PersonnelAdminTest {
     }
 
     @Test
-    public void isValidPersonnel()  {
+    public void testIsValidPersonnel()  {
         Assert.assertTrue(
                 "A person with valid inputs is provided.",
                 personnelAdmin.isValidPersonnel(personnel));
     }
 
     @Test
-    public void isNotValidPersonnel()  {
+    public void testIsNotValidPersonnel()  {
         Assert.assertFalse(
                 "A person with not valid inputs is provided.",
                 personnelAdmin.isValidPersonnel(notValidPersonnel));
     }
-
 }
