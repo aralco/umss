@@ -2,11 +2,11 @@ package bo.edu.umss.programming.exercise3;
 
 import java.util.Date;
 
-public class Personnel {
+public class Personnel implements Comparable<Personnel> {
 
     private String id;
     private String fullName;
-    private String ci;
+    private String nationalID;
     private Date birthDate;
     private Integer phone;
     private String address;
@@ -29,12 +29,12 @@ public class Personnel {
         this.fullName = fullName;
     }
 
-    public String getCi() {
-        return ci;
+    public String getNationalID() {
+        return nationalID;
     }
 
-    public void setCi(String ci) {
-        this.ci = ci;
+    public void setNationalID(String nationalID) {
+        this.nationalID = nationalID;
     }
 
     public Date getBirthDate() {
@@ -82,12 +82,17 @@ public class Personnel {
         return "Personnel{" +
                 "id='" + id + '\'' +
                 ", fullName='" + fullName + '\'' +
-                ", ci='" + ci + '\'' +
+                ", nationalID='" + nationalID + '\'' +
                 ", birthDate=" + birthDate +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", position='" + position + '\'' +
                 ", registrationDate=" + registrationDate +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Personnel o) {
+        return getFullName().compareTo(o.getFullName());
     }
 }

@@ -1,22 +1,24 @@
 package bo.edu.umss.programming.exercise3;
 
-import java.util.Calendar;
-import java.util.UUID;
+import java.util.*;
 
 public class PersonnelAdmin {
+    private List<Personnel> registeredPersonnels = new ArrayList<>();
+
     public Personnel registerPersonnel(Personnel personnel) throws NotValidPersonnelException {
         if(!isValidPersonnel(personnel))    {
             throw new NotValidPersonnelException();
         }
         personnel.setId(UUID.randomUUID().toString());
         personnel.setRegistrationDate(Calendar.getInstance().getTime());
+        registeredPersonnels.add(personnel);
         return personnel;
     }
 
     public Boolean isValidPersonnel(Personnel personnel)    {
         Boolean isValid = true;
         if(personnel.getFullName()==null
-                || personnel.getCi()==null
+                || personnel.getNationalID()==null
                 || personnel.getBirthDate()==null
                 || personnel.getPhone()==null
                 || personnel.getAddress()==null
@@ -24,5 +26,32 @@ public class PersonnelAdmin {
             isValid = false;
         }
         return isValid;
+    }
+
+    public List<Personnel> retrieveRegisteredPersonnelList() {
+        return registeredPersonnels;
+    }
+
+    public List<Personnel> retrieveRegisteredPersonnelList(String criteria, String order) {
+//        Comparator<Personnel> c = (o1, o2) -> o1.getBirthDate().compareTo(o2.getBirthDate();
+        Comparator<Personnel> comparator = null;
+        switch (criteria)   {
+            case "id":
+                comparator = Comparator.comparing(Personnel::getId);
+                break;
+            case "birthDate":
+                comparator = Comparator.comparing(Personnel::getBirthDate);
+                break;
+            case "nationalID":
+                comparator = Comparator.comparing(Personnel::getNationalID);
+                break;
+            case "registrationDate":
+                comparator = Comparator.comparing(Personnel::getRegistrationDate);
+                break;
+        }
+        registeredPersonnels.sort(comparator);
+        if(order.equals("DESC"))
+            Collections.reverse(registeredPersonnels);
+        return registeredPersonnels;
     }
 }

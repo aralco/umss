@@ -38,7 +38,8 @@
     - Criterios de Aceptación:
       - La lista debe tener un formato de tabla.
       - Los datos del personal registrado deberán ser visualizados (identificador, nombre, cédula de identidad, fecha de 
-      nacimiento, cargo, fecha de registro)
+      nacimiento, cargo, fecha de registro).
+      - Verificar que el personal registrado en el punto 1, exista en la lista del personal registrado.
 
 3. Permitir ordenar el reporte(lista) del personal de forma ascendente/descendente en las siguientes columnas: identificador, 
 nombre, cédula de identidad, fecha de nacimiento y fecha de registro.
