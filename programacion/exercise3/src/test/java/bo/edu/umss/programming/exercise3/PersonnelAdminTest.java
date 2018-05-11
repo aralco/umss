@@ -1,21 +1,17 @@
 package bo.edu.umss.programming.exercise3;
 
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.Calendar;
+
+import static org.junit.Assert.*;
 
 public class PersonnelAdminTest {
     private PersonnelAdmin personnelAdmin;
     private Personnel personnel;
     private Personnel personnel2;
     private Personnel notValidPersonnel;
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() throws Exception {
@@ -45,36 +41,38 @@ public class PersonnelAdminTest {
 
     @Test
     public void testRegisteredPersonnelIsReturned() throws Exception {
-        Assert.assertNotNull(personnelAdmin.registerPersonnel(personnel));
+        assertNotNull(personnelAdmin.registerPersonnel(personnel));
     }
 
     @Test
     public void testRegisteredPersonnelHasId() throws Exception {
-        Assert.assertNotNull((personnelAdmin.registerPersonnel(personnel)).getId());
+        assertNotNull((personnelAdmin.registerPersonnel(personnel)).getId());
     }
-
 
     @Test
     public void testRegisteredPersonnelHasRegistrationDate() throws Exception {
-        Assert.assertNotNull((personnelAdmin.registerPersonnel(personnel)).getRegistrationDate());
+        assertNotNull((personnelAdmin.registerPersonnel(personnel)).getRegistrationDate());
     }
 
     @Test
-    public void testRegisteredPersonnelHasUniqueId() throws Exception {
-        Personnel personnel1 = personnelAdmin.registerPersonnel(new Personnel());
-        Personnel personnel2 = personnelAdmin.registerPersonnel(new Personnel());
-
-        Assert.assertNotEquals(personnel1.getId(), personnel2.getId());
+    public void testRegisteredPersonnelHasUniqueId() throws Exception {;
+        assertNotEquals(
+                personnelAdmin.registerPersonnel(personnel).getId(),
+                personnelAdmin.registerPersonnel(personnel2).getId());
     }
 
     @Test
-    public void testValidPersonnel() throws Exception {
-        Assert.assertTrue(personnelAdmin.isValidPersonnel(personnel));
+    public void testPersonnelToBeRegisteredIsValid() throws Exception {
+        assertTrue(personnelAdmin.isValidPersonnel(personnel));
     }
 
     @Test
-    public void testInvalidPersonnel() throws Exception {
-        Assert.assertFalse(personnelAdmin.isValidPersonnel(notValidPersonnel));
+    public void testPersonnelToBeRegisteredIsNotValid() throws Exception {
+        assertFalse(personnelAdmin.isValidPersonnel(notValidPersonnel));
+    }
 
+    @Test(expected = NotValidPersonnelException.class)
+    public void testx() throws Exception {
+        personnelAdmin.registerPersonnel(notValidPersonnel);
     }
 }

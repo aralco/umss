@@ -4,7 +4,10 @@ import java.util.Calendar;
 import java.util.UUID;
 
 public class PersonnelAdmin {
-    public Personnel registerPersonnel(Personnel personnel) {
+    public Personnel registerPersonnel(Personnel personnel) throws NotValidPersonnelException {
+        if(!isValidPersonnel(personnel))    {
+            throw new NotValidPersonnelException();
+        }
         personnel.setId(UUID.randomUUID().toString());
         personnel.setRegistrationDate(Calendar.getInstance().getTime());
         return personnel;

@@ -37,15 +37,15 @@
     - Beneficios: Permitir visualizar al usuario la lista del personal registrado.
     - Criterios de Aceptación:
       - La lista debe tener un formato de tabla.
-      - Todos los datos del personal registrado deberán ser visualizados (identificador, nombre, cédula de identidad, fecha y lugar de 
-      nacimiento, teléfono, dirección, cargo/ocupación, fecha de registro)
+      - Los datos del personal registrado deberán ser visualizados (identificador, nombre, cédula de identidad, fecha de 
+      nacimiento, cargo, fecha de registro)
 
 3. Permitir ordenar el reporte(lista) del personal de forma ascendente/descendente en las siguientes columnas: identificador, 
-cédula de identidad, fecha de nacimiento y fecha de registro.
+nombre, cédula de identidad, fecha de nacimiento y fecha de registro.
     - Beneficios: Facilidad para el usuario en la visualización de datos.
     - Criterios de Aceptación:
-      - Dado un criterio de ordenamiento y el tipo de ordenamiento la lista deberá ordenarse. Ej: Identificador|ASC ordenará 
-      la lista en base al identificador de forma ascendente.      
+      - La lista deberá poder ser ordenada dado un criterio y tipo de ordenamiento (ascendente/descendente). Ej: Identificador|ASC 
+      ordenará la lista en base al identificador de forma ascendente.      
 
 4. Permitir realizar búsquedas del personal en base a criterios como ser: identificador, cédula de identidad, nombre.
     - Beneficios: Facilidad para encontrar un determinado usuario en base a criterios.
