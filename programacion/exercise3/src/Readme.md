@@ -51,8 +51,6 @@ nombre, cédula de identidad, fecha de nacimiento y fecha de registro.
 4. Permitir realizar búsquedas del personal en base a criterios como ser: identificador, cédula de identidad, nombre.
     - Beneficios: Facilidad para encontrar un determinado usuario en base a criterios.
     - Criterios de Aceptación:
-      - Dado un criterio de búsqueda la aplicación deberá mostrar el/los resultados que hagan match con el criterio de búsqueda.
-      - Los criterios de búsqueda deberán ser de match word en el caso del identificador y la cédula de identidad. Ej: Si 
-      el criterio de búsqueda es por identificador **1111** se deberá retornar el registro que hace match con el identificador.
-      - El criterio de búsqueda para el nombre deberá ser flexible de manera que el usuario solo necesite escribir parte 
-      del nombre para encontrar una o más coincidencias. Ej: Criterio nombre **Fernan**.
+      - Dado un criterio de búsqueda la aplicación deberá mostrar el resultado que hagan match con el criterio de 
+      búsqueda. Ej: Si el criterio de búsqueda es por identificador **1111** se deberá retornar el registro que hace match 
+      con el identificador.

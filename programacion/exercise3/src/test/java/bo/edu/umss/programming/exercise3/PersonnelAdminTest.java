@@ -122,7 +122,7 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("name","ASC"), contains(personnel2, personnel3, personnel, personnel4));
+        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("fullName","ASC"), contains(personnel2, personnel3, personnel, personnel4));
 
     }
 
@@ -150,7 +150,7 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("name","DESC"), contains(personnel4, personnel, personnel3, personnel2));
+        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("fullName","DESC"), contains(personnel4, personnel, personnel3, personnel2));
 
     }
 
@@ -172,5 +172,22 @@ public class PersonnelAdminTest {
         assertThat(personnelAdmin.retrieveRegisteredPersonnelList("birthDate","DESC"), contains(personnel, personnel4, personnel3, personnel2));
     }
 
+    @Test
+    public void testSearchByFullName() throws Exception {
+        personnelAdmin.registerPersonnel(personnel);
+        personnelAdmin.registerPersonnel(personnel2);
+        personnelAdmin.registerPersonnel(personnel3);
+        personnelAdmin.registerPersonnel(personnel4);
+        assertThat(personnelAdmin.searchByFullName("Pepito Juarez"), is(personnel));
+    }
+
+    @Test
+    public void testSearchByNationalID() throws Exception {
+        personnelAdmin.registerPersonnel(personnel);
+        personnelAdmin.registerPersonnel(personnel2);
+        personnelAdmin.registerPersonnel(personnel3);
+        personnelAdmin.registerPersonnel(personnel4);
+        assertThat(personnelAdmin.searchByNationalID("134056 CB"), is(personnel3));
+    }
 
 }
