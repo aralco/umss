@@ -1,8 +1,9 @@
 package bo.edu.umss.programming.exercise3;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Personnel implements Comparable<Personnel> {
+public class Personnel {
 
     private String id;
     private String fullName;
@@ -79,20 +80,25 @@ public class Personnel implements Comparable<Personnel> {
 
     @Override
     public String toString() {
-        return "Personnel{" +
-                "id='" + id + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", nationalID='" + nationalID + '\'' +
-                ", birthDate=" + birthDate +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", position='" + position + '\'' +
-                ", registrationDate=" + registrationDate +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Personnel o) {
-        return getFullName().compareTo(o.getFullName());
+        String birthDatePattern = "MMM-dd-yyyy";
+        String registrationDatePattern = "MMM-dd-yyyy HH:mm:ss";
+        SimpleDateFormat birthDateSDF = new SimpleDateFormat(birthDatePattern);
+        SimpleDateFormat registrationDateSDF = new SimpleDateFormat(registrationDatePattern);
+        if(id!=null)    {
+            return id + '\t' +
+                    fullName + '\t' +
+                    nationalID + '\t' +
+                    birthDateSDF.format(birthDate) + '\t' +
+                    phone + '\t' +
+                    address + '\t' +
+                    position + '\t' +
+                    registrationDateSDF.format(registrationDate);
+        }
+        return fullName + '\t' +
+                nationalID + '\t' +
+                birthDateSDF.format(birthDate) + '\t' +
+                phone + '\t' +
+                address + '\t' +
+                position;
     }
 }
