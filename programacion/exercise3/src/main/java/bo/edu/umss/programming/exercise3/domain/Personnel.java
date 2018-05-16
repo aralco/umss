@@ -3,7 +3,7 @@ package bo.edu.umss.programming.exercise3.domain;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Personnel {
+public class Personnel implements Comparable<Personnel>{
 
     private String id;
     private String fullName;
@@ -100,5 +100,10 @@ public class Personnel {
                 phone + '\t' +
                 address + '\t' +
                 position;
+    }
+
+    @Override
+    public int compareTo(Personnel o) {
+        return getFullName().compareTo(o.getFullName());
     }
 }

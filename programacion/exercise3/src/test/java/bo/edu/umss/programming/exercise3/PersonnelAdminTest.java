@@ -9,7 +9,6 @@ import org.junit.Test;
 import java.util.Calendar;
 
 import static org.hamcrest.Matchers.*;
-
 import static org.junit.Assert.*;
 
 public class PersonnelAdminTest {
@@ -18,7 +17,8 @@ public class PersonnelAdminTest {
     private Personnel personnel2;
     private Personnel personnel3;
     private Personnel personnel4;
-    private Personnel notValidPersonnel;
+    private Personnel personnelWithNullValues;
+    private Personnel personnelWithInvalidData;
 
     @Before
     public void setUp() throws Exception {
@@ -61,9 +61,19 @@ public class PersonnelAdminTest {
         personnel4.setAddress("Av. Pando #121");
         personnel4.setPosition("Sargento");
 
-        notValidPersonnel = new Personnel();
+        personnelWithNullValues = new Personnel();
+
+        personnelWithInvalidData = new Personnel();
+        personnelWithInvalidData.setFullName("Peter123");
+        personnelWithInvalidData.setNationalID("12857263");
+        calendar.set(1999, Calendar.MAY, 6);//YYYY,MM,DD
+        personnelWithInvalidData.setBirthDate(calendar.getTime());
+        personnelWithInvalidData.setPhone(16587222);
+        personnelWithInvalidData.setAddress("4324132899839482948293");
+        personnelWithInvalidData.setPosition("Cabo@Coronel.com");
     }
 
+    //Funcionalidad 1
     @Test
     public void testRegisteredPersonnelIsReturned() throws Exception {
         assertNotNull(personnelAdmin.registerPersonnel(personnel));
@@ -87,20 +97,40 @@ public class PersonnelAdminTest {
     }
 
     @Test
-    public void testPersonnelToBeRegisteredIsValid() throws Exception {
-        assertTrue(personnelAdmin.isValidPersonnel(personnel));
+    public void testPersonnelToBeRegisteredDoesNotHaveNullValues() throws Exception {
+        assertFalse(personnelAdmin.personnelHasNullValues(personnel));
     }
 
     @Test
-    public void testPersonnelToBeRegisteredIsNotValid() throws Exception {
-        assertFalse(personnelAdmin.isValidPersonnel(notValidPersonnel));
+    public void testPersonnelToBeRegisteredHasNullValues() throws Exception {
+        assertTrue(personnelAdmin.personnelHasNullValues(personnelWithNullValues));
+    }
+
+    @Test
+    public void testPersonnelToBeRegisteredHasValidData() throws Exception {
+        assertFalse(
+                "Personnel has valid data",
+                personnelAdmin.personnelHasInvalidData(personnel));
+    }
+
+    @Test
+    public void testPersonnelToBeRegisteredHasInvalidData() throws Exception {
+        assertTrue(
+                "Personnel has invalid data",
+                personnelAdmin.personnelHasInvalidData(personnelWithInvalidData));
     }
 
     @Test(expected = NotValidPersonnelException.class)
     public void testExceptionThrownWhenPersonnelToBeRegisteredIsNotValid() throws Exception {
-        personnelAdmin.registerPersonnel(notValidPersonnel);
+        personnelAdmin.registerPersonnel(personnelWithNullValues);
     }
 
+    @Test(expected = NotValidPersonnelException.class)
+    public void testExceptionThrownWhenPersonnelToBeRegisteredIsNotValid2() throws Exception {
+        personnelAdmin.registerPersonnel(personnelWithInvalidData);
+    }
+
+    //Funcionalidad 2
     @Test
     public void testRegisteredPersonnelListExists() throws Exception {
         assertNotNull(personnelAdmin.retrieveRegisteredPersonnelList());
@@ -109,7 +139,7 @@ public class PersonnelAdminTest {
     @Test
     public void testRegisteredPersonnelListIsNotEmpty() throws Exception {
         personnelAdmin.registerPersonnel(personnel);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList(), not(empty()));
+        assertFalse(personnelAdmin.retrieveRegisteredPersonnelList().isEmpty());
     }
 
     @Test
@@ -120,15 +150,17 @@ public class PersonnelAdminTest {
                 hasItems(personnel, personnel2));
     }
 
+    //Funcionalidad 3
     @Test
-    public void testSortByNameAsc() throws Exception {
+    public void testSortByFullNameAsc() throws Exception {
         personnelAdmin.registerPersonnel(personnel);
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("fullName","ASC"),
+        assertThat(
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "fullName","ASC"),
                 contains(personnel2, personnel3, personnel, personnel4));
-
     }
 
     @Test
@@ -137,7 +169,9 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("nationalID","ASC"),
+        assertThat(
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "nationalID","ASC"),
                 contains(personnel3, personnel2, personnel4, personnel));
     }
 
@@ -147,7 +181,9 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("birthDate","ASC"),
+        assertThat(
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "birthDate","ASC"),
                 contains(personnel2, personnel3, personnel4, personnel));
     }
 
@@ -157,7 +193,9 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.retrieveRegisteredPersonnelList("fullName","DESC"),
+        assertThat(
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "fullName","DESC"),
                 contains(personnel4, personnel, personnel3, personnel2));
 
     }
@@ -169,7 +207,8 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
         assertThat(
-                personnelAdmin.retrieveRegisteredPersonnelList("nationalID","DESC"),
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "nationalID","DESC"),
                 contains(personnel, personnel4, personnel2, personnel3));
     }
 
@@ -180,18 +219,32 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
         assertThat(
-                personnelAdmin.retrieveRegisteredPersonnelList("birthDate","DESC"),
+                personnelAdmin.retrieveRegisteredPersonnelList(
+                        "birthDate","DESC"),
                 contains(personnel, personnel4, personnel3, personnel2));
     }
 
+    //Funcionalidad 3
     @Test
     public void testSearchByFullName() throws Exception {
         personnelAdmin.registerPersonnel(personnel);
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.searchByFullName("Pepito Juarez"),
-                is(personnel));
+        assertEquals(
+                personnelAdmin.searchByFullName("Pepito Juarez").getFullName(),
+                "Pepito Juarez");
+    }
+
+    @Test
+    public void testSearchByFullName2() throws Exception {
+        personnel = personnelAdmin.registerPersonnel(personnel);
+        personnel2 = personnelAdmin.registerPersonnel(personnel2);
+        personnel3 = personnelAdmin.registerPersonnel(personnel3);
+        personnel4 = personnelAdmin.registerPersonnel(personnel4);
+        assertEquals(
+                personnelAdmin.searchByFullName("Pepito Juarez"),
+                personnel);
     }
 
     @Test
@@ -200,8 +253,22 @@ public class PersonnelAdminTest {
         personnelAdmin.registerPersonnel(personnel2);
         personnelAdmin.registerPersonnel(personnel3);
         personnelAdmin.registerPersonnel(personnel4);
-        assertThat(personnelAdmin.searchByNationalID("134056 CB"),
-                is(personnel3));
+        assertEquals(
+                personnelAdmin.searchByNationalID("134056 CB").getNationalID(),
+                "134056 CB");
     }
+
+    @Test
+    public void testSearchByNationalID2() throws Exception {
+        personnelAdmin.registerPersonnel(personnel);
+        personnelAdmin.registerPersonnel(personnel2);
+        personnelAdmin.registerPersonnel(personnel3);
+        personnelAdmin.registerPersonnel(personnel4);
+        assertEquals(
+                personnelAdmin.searchByNationalID("134056 CB"),
+                personnel3);
+    }
+
+
 
 }

@@ -56,42 +56,35 @@ public class CLIPersonnelAdmin {
         personnel4.setAddress("Av. Pando #121");
         personnel4.setPosition("Sargento");
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.printf("Register new Personnel: %s \n", personnel);
+        System.out.printf("++++++++++++ Operation -> Register new Personnel: %s ++++++++++++\n", personnel);
         personnelAdmin.registerPersonnel(personnel);
         List<Personnel> personnels = personnelAdmin.retrieveRegisteredPersonnelList();
         displayPersonnelList(personnels);
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.printf("Register new Personnel: %s \n", personnel2);
+        System.out.printf("++++++++++++ Operation -> Register new Personnel: %s ++++++++++++\n", personnel2);
         personnelAdmin.registerPersonnel(personnel2);
         personnels = personnelAdmin.retrieveRegisteredPersonnelList();
         displayPersonnelList(personnels);
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.printf("Register new Personnel: %s \n", personnel3);
+        System.out.printf("++++++++++++ Operation -> Register new Personnel: %s ++++++++++++\n", personnel3);
         personnelAdmin.registerPersonnel(personnel3);
         personnels = personnelAdmin.retrieveRegisteredPersonnelList();
         displayPersonnelList(personnels);
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.printf("Register new Personnel: %s \n", personnel4);
+        System.out.printf("++++++++++++ Operation -> Register new Personnel: %s ++++++++++++\n", personnel4);
         personnelAdmin.registerPersonnel(personnel4);
         personnels = personnelAdmin.retrieveRegisteredPersonnelList();
         displayPersonnelList(personnels);
 
-        System.out.println("********************************************************************************************");
-        System.out.println("SortBy FullName, ASC");
+        System.out.printf("++++++++++++ Operation -> SortBy 'FullName', ASC ++++++++++++\n");
         personnels = personnelAdmin.retrieveRegisteredPersonnelList("fullName", "ASC");
         displayPersonnelList(personnels);
 
-        System.out.println("********************************************************************************************");
-        System.out.println("SortBy BirthDate, DESC");
+        System.out.printf("++++++++++++ Operation -> SortBy 'BirthDate', DESC ++++++++++++\n");
         personnels = personnelAdmin.retrieveRegisteredPersonnelList("birthDate", "DESC");
         displayPersonnelList(personnels);
 
-        System.out.println("********************************************************************************************");
-        System.out.println("Search for: Pepito Juarez");
+        System.out.printf("++++++++++++ Operation -> Search for: 'Pepito Juarez' ++++++++++++\n");
         Personnel found = personnelAdmin.searchByFullName("Pepito Juarez");
         List<Personnel> personnelList = new ArrayList<>(1);
         personnelList.add(found);
@@ -106,5 +99,6 @@ public class CLIPersonnelAdmin {
         for(Personnel p : personnels)   {
             System.out.printf("%s \n", p);
         }
+        System.out.println("\n");
     }
 }
