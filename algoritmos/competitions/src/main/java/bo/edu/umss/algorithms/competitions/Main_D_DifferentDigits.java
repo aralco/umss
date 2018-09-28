@@ -21,7 +21,7 @@ class Main_D_DifferentDigits {
 
                 int result = 0;
                 for(int i=n;i<=m;i++)   {
-                    int[] fi = getNumberFrequency(i);
+                    int[] fi = getDigitsFrequency(i);
                     if(!hasRepeatedDigits(fi))  {
                         result++;
                     }
@@ -34,7 +34,7 @@ class Main_D_DifferentDigits {
 
     }
 
-    static int[] getNumberFrequency(int n) {
+    static int[] getDigitsFrequency(int n) {
         int[] result = new int[10];
         int dividend = n;
         int quotient;
