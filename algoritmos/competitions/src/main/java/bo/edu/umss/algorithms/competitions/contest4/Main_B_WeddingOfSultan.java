@@ -1,4 +1,4 @@
-package bo.edu.umss.algorithms.competitions;
+package bo.edu.umss.algorithms.competitions.contest4;
 
 //https://fabhodev.wordpress.com/2016/07/04/12582-wedding-of-sultan-uva-solution/
 //https://github.com/morris821028/UVa/blob/master/volume125/12582%20-%20Wedding%20of%20Sultan.cpp

@@ -1,4 +1,4 @@
-package bo.edu.umss.algorithms.competitions;
+package bo.edu.umss.algorithms.competitions.contest4;
 
 import java.io.BufferedReader;
 import java.io.IOException;

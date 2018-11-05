@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.bo.umss.programming.exercise1.domain</OriginalElement>
+  <nodes>
+    <node x="989.9935897435897" y="11.0">edu.bo.umss.programming.exercise1.domain.FuelDispenser</node>
+    <node x="371.4935897435897" y="378.0">edu.bo.umss.programming.exercise1.domain.Weapon</node>
+    <node x="1232.75" y="22.0">edu.bo.umss.programming.exercise1.domain.Cabinet</node>
+    <node x="510.2499999999999" y="167.0">edu.bo.umss.programming.exercise1.domain.Organization</node>
+    <node x="107.49358974358972" y="389.0">edu.bo.umss.programming.exercise1.domain.Ammunition</node>
+    <node x="480.9935897435897" y="44.0">edu.bo.umss.programming.exercise1.domain.Operation</node>
+    <node x="1146.0" y="222.0">edu.bo.umss.programming.exercise1.domain.Armory</node>
+    <node x="789.9935897435897" y="0.0">edu.bo.umss.programming.exercise1.domain.Site</node>
+    <node x="839.0" y="222.0">edu.bo.umss.programming.exercise1.domain.GasStation</node>
+    <node x="264.4935897435897" y="11.0">edu.bo.umss.programming.exercise1.domain.Asset</node>
+    <node x="609.9935897435897" y="11.0">edu.bo.umss.programming.exercise1.domain.Personnel</node>
+    <node x="226.9999999999999" y="189.0">edu.bo.umss.programming.exercise1.domain.Arm</node>
+    <node x="0.0" y="178.0">edu.bo.umss.programming.exercise1.domain.Vehicle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Weapon" target="edu.bo.umss.programming.exercise1.domain.Arm">
+      <point x="0.0" y="-47.5" />
+      <point x="459.4935897435897" y="353.0" />
+      <point x="414.4999999999999" y="353.0" />
+      <point x="62.5" y="58.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Organization" target="edu.bo.umss.programming.exercise1.domain.Operation">
+      <point x="-27.5" y="-80.5" />
+      <point x="592.7499999999999" y="137.0" />
+      <point x="535.4935897435897" y="137.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Vehicle" target="edu.bo.umss.programming.exercise1.domain.Asset">
+      <point x="0.0" y="-69.5" />
+      <point x="103.5" y="147.0" />
+      <point x="291.1602564102564" y="147.0" />
+      <point x="-53.333333333333314" y="47.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Armory" target="edu.bo.umss.programming.exercise1.domain.Site">
+      <point x="-52.25" y="-25.5" />
+      <point x="1198.25" y="137.0" />
+      <point x="939.9935897435897" y="137.0" />
+      <point x="60.0" y="58.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Ammunition" target="edu.bo.umss.programming.exercise1.domain.Arm">
+      <point x="0.0" y="-36.5" />
+      <point x="229.49358974358972" y="353.0" />
+      <point x="289.4999999999999" y="353.0" />
+      <point x="-62.5" y="58.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.GasStation" target="edu.bo.umss.programming.exercise1.domain.Site">
+      <point x="-71.75" y="-25.5" />
+      <point x="910.75" y="147.0" />
+      <point x="879.9935897435897" y="147.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="edu.bo.umss.programming.exercise1.domain.Arm" target="edu.bo.umss.programming.exercise1.domain.Asset">
+      <point x="0.0" y="-58.5" />
+      <point x="351.9999999999999" y="147.0" />
+      <point x="344.4935897435897" y="147.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9208924949290062" x="623.8414096916299" y="316.5" />
+  <SelectedNodes>
+    <node>edu.bo.umss.programming.exercise1.domain.FuelDispenser</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
