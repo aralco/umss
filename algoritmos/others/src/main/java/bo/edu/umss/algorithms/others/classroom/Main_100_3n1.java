@@ -48,7 +48,6 @@ public class Main_100_3n1 {
             return memo.get(n);
         if(n==1)
             return  1;
-        long newN ;
         if(n%2==0)
             n = n/2;
         else
