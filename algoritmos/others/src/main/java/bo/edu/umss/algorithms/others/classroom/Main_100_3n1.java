@@ -5,8 +5,12 @@ package bo.edu.umss.algorithms.others.classroom;
 
 //http://www.algorithmist.com/index.php/UVa_100
 //https://tausiq.wordpress.com/2008/12/09/uva-100-the-3n-1-problem/
+//https://www.mathblog.dk/uva-100-3n-plus-1-problem/
+//http://acm-solution.blogspot.com/2010/11/acm-uva-100-3n-1-problem-java.html
+//https://blog.adilakhter.com/2013/02/21/1729/
+
 //		Problem	Verdict	                               Language	Run Time	Submission Date
-//      22239126	100	The 3n + 1 problem	Accepted	JAVA	0.460	2018-11-03 07:57:22
+//      22250713	100	The 3n + 1 problem	Accepted	JAVA	0.300	2018-11-05 04:08:44
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -47,13 +51,18 @@ public class Main_100_3n1 {
         if(memo.containsKey(n))
             return memo.get(n);
         if(n==1)
-            return  1;
+            return 1;
+        int result = 1 + cycleLenght(nextN(n));
+        memo.put(n, result);
+        return result;
+    }
+
+    static long nextN(long n) {
         if(n%2==0)
             n = n/2;
         else
             n = 3*n+1;
-        memo.put(n, cycleLenght(n));
-        return 1 + memo.get(n);
+        return n;
     }
 
 }
