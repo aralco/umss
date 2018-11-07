@@ -9,12 +9,21 @@ import java.util.*;
 //https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1628
 
 //http://www.algorithmist.com/index.php/UVa_10687
+//https://uva.onlinejudge.org/board/viewtopic.php?f=28&t=8242&p=35180&hilit=10687#p35180
 //https://github.com/lamphanviet/competitive-programming/blob/master/uva-online-judge/accepted-solutions/10687%20-%20Monitoring%20the%20Amazon.cpp
 //https://github.com/Diusrex/UVA-Solutions/blob/master/10687%20Monitoring%20the%20Amazon.cpp
 //https://github.com/shahed-shd/Online-Judge-Solutions/blob/master/UVa-Online-Judge/10687%20-%20Monitoring%20the%20Amazon.cpp
 //http://codealltheproblems.blogspot.com/2015/09/uva-10687-monitoring-amazon.html
 //http://sound-system-79.blogspot.com/2015/03/uva-10687-monitoring-amazon.html
 //https://omarsebres.com/2012/10/27/10687-monitoring-the-amazon/
+
+//https://github.com/lamphanviet/competitive-programming/blob/master/uva-online-judge/accepted-solutions/10687%20-%20Monitoring%20the%20Amazon.cpp
+//https://github.com/Diusrex/UVA-Solutions/blob/master/10687%20Monitoring%20the%20Amazon.cpp
+//https://github.com/shahed-shd/Online-Judge-Solutions/blob/master/UVa-Online-Judge/10687%20-%20Monitoring%20the%20Amazon.cpp
+//http://codealltheproblems.blogspot.com/2015/09/uva-10687-monitoring-amazon.html
+//http://sound-system-79.blogspot.com/2015/03/uva-10687-monitoring-amazon.html
+//https://omarsebres.com/2012/10/27/10687-monitoring-the-amazon/
+
 public class Main_G_MonitoringTheAmazon {
     public static void main(String[] args)  throws IOException  {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
