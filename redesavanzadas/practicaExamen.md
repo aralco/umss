@@ -1187,5 +1187,5 @@ line vty 0 4
 !
 end
 ```
-## DHCP Server
-![DNS Server](https://github.com/aralco/umss/blob/master/redesavanzadas/resources/DNSServer.PNG)
+<!-- ## DHCP Server -->
+<!-- ![DNS Server](https://github.com/aralco/umss/blob/master/redesavanzadas/resources/DNSServer.PNG) -->
